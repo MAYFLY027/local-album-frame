@@ -1,0 +1,10 @@
+{
+  "MediaRoot": "C:\\Users\\YOUR_NAME\\Pictures",
+  "ImageSeconds": 30,
+  "Shuffle": true,
+  "IncludeVideos": true,
+  "ShowClock": true,
+  "RandomClockCorner": true,
+  "PlaySound": false,
+  "ShowMediaInfo": true
+}

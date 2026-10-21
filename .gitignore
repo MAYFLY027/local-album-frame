@@ -1,0 +1,11 @@
+player/
+runtime/
+settings.json
+*.log
+*.zip
+*.lnk
+*.png
+*.jpg
+*.mp4
+ui/
+settings.json.tmp

@@ -1,0 +1,31 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="电子相册设置" Width="790" Height="714" MinWidth="560" MinHeight="540" WindowStartupLocation="CenterScreen" Background="#101A28" Foreground="#F2F6FC" FontFamily="Microsoft YaHei UI" FontSize="19">
+ <Window.Resources>
+  <Style TargetType="Button"><Setter Property="MinHeight" Value="52"/><Setter Property="MinWidth" Value="78"/><Setter Property="Margin" Value="4"/><Setter Property="Padding" Value="14,8"/><Setter Property="Background" Value="#263B55"/><Setter Property="Foreground" Value="White"/><Setter Property="BorderThickness" Value="0"/><Setter Property="Cursor" Value="Hand"/></Style>
+  <Style TargetType="TextBox"><Setter Property="MinHeight" Value="48"/><Setter Property="Padding" Value="10,8"/><Setter Property="Background" Value="#1C2B3E"/><Setter Property="Foreground" Value="White"/><Setter Property="BorderBrush" Value="#456079"/><Setter Property="VerticalContentAlignment" Value="Center"/></Style>
+  <Style TargetType="CheckBox"><Setter Property="MinHeight" Value="48"/><Setter Property="Padding" Value="10,5"/><Setter Property="VerticalContentAlignment" Value="Center"/><Setter Property="Foreground" Value="White"/></Style>
+  <Style TargetType="RadioButton"><Setter Property="MinHeight" Value="52"/><Setter Property="Foreground" Value="White"/><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="RadioButton"><Border x:Name="ChoiceBorder" Background="#1C2B3E" BorderBrush="#456079" BorderThickness="2" CornerRadius="7" Padding="16,10"><ContentPresenter VerticalAlignment="Center"/></Border><ControlTemplate.Triggers><Trigger Property="IsChecked" Value="True"><Setter TargetName="ChoiceBorder" Property="Background" Value="#1673C9"/><Setter TargetName="ChoiceBorder" Property="BorderBrush" Value="#74C0FF"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter></Style>
+ </Window.Resources>
+ <Grid Margin="24,18,24,20">
+  <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+  <StackPanel Grid.Row="0" Margin="0,0,0,12"><TextBlock Text="把相册调成你喜欢的样子" FontSize="25" FontWeight="SemiBold"/><TextBlock Text="保存后生效 · 播放时也可点击底部“设置”" FontSize="15" Foreground="#A5B8CD" Margin="0,5,0,0"/></StackPanel>
+  <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" PanningMode="VerticalOnly">
+   <StackPanel Margin="0,0,10,0">
+    <TextBlock Text="照片和视频文件夹" FontWeight="SemiBold" Margin="0,4,0,6"/>
+    <Grid><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions><TextBox x:Name="FolderBox" FontSize="17"/><Button x:Name="BrowseButton" Grid.Column="1" Content="选择文件夹" Margin="10,0,0,0"/></Grid>
+    <TextBlock Text="自动包含所有子文件夹；网盘请先在 CloudDrive 中挂载。" TextWrapping="Wrap" FontSize="14" Foreground="#A5B8CD" Margin="0,6,0,14"/>
+    <CheckBox x:Name="MediaInfoBox" Content="左上角显示图片信息（文件名、宽高和修改日期）"/>
+    <TextBlock Text="播放顺序" FontWeight="SemiBold"/>
+    <StackPanel Orientation="Horizontal"><RadioButton x:Name="RandomButton" Content="随机播放" GroupName="Order" Margin="0,0,25,0"/><RadioButton x:Name="SequentialButton" Content="按名称顺序播放" GroupName="Order"/></StackPanel>
+    <TextBlock Text="每张图片停留多久" FontWeight="SemiBold" Margin="0,8,0,6"/>
+    <StackPanel Orientation="Horizontal"><Button x:Name="MinusButton" Content="－5秒"/><TextBox x:Name="SecondsBox" Width="108" TextAlignment="Center"/><TextBlock Text="秒" VerticalAlignment="Center" Margin="10,0"/><Button x:Name="PlusButton" Content="＋5秒"/></StackPanel>
+    <WrapPanel Margin="0,2,0,8"><Button x:Name="Preset5" Content="5秒"/><Button x:Name="Preset10" Content="10秒"/><Button x:Name="Preset15" Content="15秒"/><Button x:Name="Preset30" Content="30秒"/><Button x:Name="Preset60" Content="60秒"/></WrapPanel>
+    <CheckBox x:Name="VideosBox" Content="图片和视频混播（视频播完后切换）"/>
+    <CheckBox x:Name="SoundBox" Content="播放视频声音"/>
+    <CheckBox x:Name="ClockBox" Content="显示时间、日期和星期"/>
+    <CheckBox x:Name="CornerBox" Content="时钟随图片在四个角落变换位置"/>
+    <TextBlock Text="轻点画面展开全部按钮，再点空白处隐藏。视频底部细线可点开并拖动进度。" TextWrapping="Wrap" FontSize="14" Foreground="#A5B8CD" Margin="0,8,0,12"/>
+   </StackPanel>
+  </ScrollViewer>
+  <Grid Grid.Row="2" Margin="0,12,0,0"><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions><Button x:Name="CloseButton" Content="关闭" Margin="0,0,8,0"/><Button x:Name="PlayButton" Grid.Column="1" Content="保存并开始播放" Background="#1673C9" Margin="8,0,0,0" FontWeight="SemiBold"/></Grid>
+ </Grid>
+</Window>
